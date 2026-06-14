@@ -1,3 +1,8 @@
 \.claude
 .env
 ghost-router-singleton/broadcast/*
+ghost-shard-sdk/pnpm-lock.yaml
+ghost-shard-sdk/examples/ghost-frontend/next-env.d.ts
+ghost-shard-sdk/examples/ghost-frontend/next-env.d.ts
+ghost-shard-sdk/examples/ghost-frontend/next-env.d.ts
+/ghost-shard-sdk/examples/ghost-frontend
