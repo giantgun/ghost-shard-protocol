@@ -3,6 +3,7 @@
   "style": "base-nova",
   "rsc": true,
   "tsx": true,
+  "packageManager": "pnpm@11.3.0",
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "app/globals.css",
