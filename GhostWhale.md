@@ -338,22 +338,22 @@ A transaction is a discrete event. Ownership is persistent state.
 flowchart TD
 
     T["Transaction"]
-        -->|"Exists briefly"| TE["Discrete Event"]
+        ==>|"Exists briefly"| TE["Discrete Event"]
 
     O["Ownership"]
-        -->|"Persists across time"| PS["Persistent State"]
+        ==>|"Persists across time"| PS["Persistent State"]
 
-    PS -->|"Reveals"| W["Wealth"]
-    PS -->|"Reveals"| R["Relationships"]
-    PS -->|"Reveals"| B["Behavior"]
-    PS -->|"Reveals"| H["Historical Activity"]
+    PS ==>|"Reveals"| W["Wealth"]
+    PS ==>|"Reveals"| R["Relationships"]
+    PS ==>|"Reveals"| B["Behavior"]
+    PS ==>|"Reveals"| H["Historical Activity"]
 
-    W -->|"Accumulates into"| ID["Identity Exposure"]
-    R -->|"Accumulates into"| ID
-    B -->|"Accumulates into"| ID
-    H -->|"Accumulates into"| ID
+    W ==>|"Accumulates into"| ID["Identity Exposure"]
+    R ==>|"Accumulates into"| ID
+    B ==>|"Accumulates into"| ID
+    H ==>|"Accumulates into"| ID
 
-    ID -->|"Creates"| OP["Ownership Visibility Problem"]
+    ID ==>|"Creates"| OP["Ownership Visibility Problem"]
 ```
 
 While transactions occur momentarily, ownership persists across every block, every interaction, and every asset held by an address. As a result, ownership becomes a long-lived source of information that continuously leaks data about the user.
@@ -396,19 +396,19 @@ flowchart TD
 
     O["Persistent Ownership"]
 
-    O -->|"Reveals"| W["Wealth"]
-    O -->|"Reveals"| R["Relationships"]
-    O -->|"Reveals"| B["Behavior"]
-    O -->|"Reveals"| I["Intent"]
-    O -->|"Reveals"| N["Network Position"]
+    O ==>|"Reveals"| W["Wealth"]
+    O ==>|"Reveals"| R["Relationships"]
+    O ==>|"Reveals"| B["Behavior"]
+    O ==>|"Reveals"| I["Intent"]
+    O ==>|"Reveals"| N["Network Position"]
 
-    W -->|"Contributes to"| P["Identity Exposure"]
-    R -->|"Contributes to"| P
-    B -->|"Contributes to"| P
-    I -->|"Contributes to"| P
-    N -->|"Contributes to"| P
+    W ==>|"Contributes to"| P["Identity Exposure"]
+    R ==>|"Contributes to"| P
+    B ==>|"Contributes to"| P
+    I ==>|"Contributes to"| P
+    N ==>|"Contributes to"| P
 
-    P -->|"Creates"| Q["Ownership Visibility Problem"]
+    P ==>|"Creates"| Q["Ownership Visibility Problem"]
 ```
 
 ### The Fundamental Question
@@ -485,18 +485,18 @@ Instead of concealing activity between persistent owners, the protocol minimizes
 flowchart LR
 
     TP["Transaction Privacy"]
-        -->|"Attempts to hide"| TE["Transaction Edges"]
+        ==>|"Attempts to hide"| TE["Transaction Edges"]
 
-    TE -->|"But leaves"| PO["Persistent Ownership"]
+    TE ==>|"But leaves"| PO["Persistent Ownership"]
 
-    PO -->|"Still enables"| IV["Identity Visibility"]
+    PO ==>|"Still enables"| IV["Identity Visibility"]
 
     OP["Ownership Privacy"]
-        -->|"Changes"| OT["Ownership Topology"]
+        ==>|"Changes"| OT["Ownership Topology"]
 
-    OT -->|"Enables"| DO["Disposable Ownership"]
+    OT ==>|"Enables"| DO["Disposable Ownership"]
 
-    DO -->|"Produces"| OA["Ownership Ambiguity"]
+    DO ==>|"Produces"| OA["Ownership Ambiguity"]
 ```
 
 ### Design Outcome
@@ -542,17 +542,17 @@ Privacy is therefore not a feature layered onto the protocol. It is a property o
 flowchart LR
 
     U["User"]
-        -->|"Uses Protocol"| S["Shard Creation"]
+        ==>|"Uses Protocol"| S["Shard Creation"]
 
-    S -->|"Creates"| O["Private Ownership State"]
+    S ==>|"Creates"| O["Private Ownership State"]
 
-    O -->|"Spent Through"| M["Mesh Transaction"]
+    O ==>|"Spent Through"| M["Mesh Transaction"]
 
-    M -->|"Creates"| N["New Shards"]
+    M ==>|"Creates"| N["New Shards"]
 
-    N -->|"Maintains"| P["Privacy By Default"]
+    N ==>|"Maintains"| P["Privacy By Default"]
 
-    P -->|"Applies To"| A["All Users"]
+    P ==>|"Applies To"| A["All Users"]
 ```
 
 ### Argument 1: The Privacy Set Must Be Everyone
@@ -578,19 +578,19 @@ flowchart TD
 
     A["Opt-In Privacy"]
 
-    A -->|"Creates"| B["Small Privacy Set"]
+    A ==>|"Creates"| B["Small Privacy Set"]
 
-    B -->|"Makes Users"| C["Distinguishable"]
+    B ==>|"Makes Users"| C["Distinguishable"]
 
-    C -->|"Weakens"| D["Privacy Guarantees"]
+    C ==>|"Weakens"| D["Privacy Guarantees"]
 
     E["Privacy By Default"]
 
-    E -->|"Creates"| F["Universal Privacy Set"]
+    E ==>|"Creates"| F["Universal Privacy Set"]
 
-    F -->|"Makes Users"| G["Indistinguishable"]
+    F ==>|"Makes Users"| G["Indistinguishable"]
 
-    G -->|"Strengthens"| H["Privacy Guarantees"]
+    G ==>|"Strengthens"| H["Privacy Guarantees"]
 ```
 
 ### Argument 2: The Opt-In Moment Is a Metadata Leak
@@ -685,16 +685,16 @@ It must be the default state of the system.
 flowchart LR
 
     A["Uniform Mesh Transactions"]
-        -->|"Creates"| B["Combinatorial Ambiguity"]
+        ==>|"Creates"| B["Combinatorial Ambiguity"]
 
-    B -->|"Produces"| C["Indistinguishability"]
+    B ==>|"Produces"| C["Indistinguishability"]
 
     D["Mixed Public & Private Modes"]
-        -->|"Creates"| E["Structural Differences"]
+        ==>|"Creates"| E["Structural Differences"]
 
-    E -->|"Enable"| F["Transaction Classification"]
+    E ==>|"Enable"| F["Transaction Classification"]
 
-    F -->|"Reduces"| C
+    F ==>|"Reduces"| C
 ```
 
 ### Design Outcome
@@ -750,20 +750,20 @@ flowchart TD
 
     P["Persistent Ownership"]
 
-    P -->|"Accumulates"| H["History"]
+    P ==>|"Accumulates"| H["History"]
 
-    P -->|"Accumulates"| B["Balances"]
+    P ==>|"Accumulates"| B["Balances"]
 
-    P -->|"Accumulates"| R["Relationships"]
+    P ==>|"Accumulates"| R["Relationships"]
 
-    P -->|"Accumulates"| BP["Behavioral Patterns"]
+    P ==>|"Accumulates"| BP["Behavioral Patterns"]
 
-    H -->|"Creates"| I["Identity Exposure"]
-    B -->|"Creates"| I
-    R -->|"Creates"| I
-    BP -->|"Creates"| I
+    H ==>|"Creates"| I["Identity Exposure"]
+    B ==>|"Creates"| I
+    R ==>|"Creates"| I
+    BP ==>|"Creates"| I
 
-    I -->|"Weakens"| PR["Privacy"]
+    I ==>|"Weakens"| PR["Privacy"]
 ```
 
 ### The Disposable Ownership Insight
@@ -801,13 +801,13 @@ No ownership unit participates in multiple spending cycles.
 flowchart LR
 
     C["Create Ownership Unit"]
-        -->|"Receives Value"| H["Hold Value"]
+        ==>|"Receives Value"| H["Hold Value"]
 
-    H -->|"Single Spend"| S["Consume Ownership Unit"]
+    H ==>|"Single Spend"| S["Consume Ownership Unit"]
 
-    S -->|"Permanent Retirement"| R["Retired"]
+    S ==>|"Permanent Retirement"| R["Retired"]
 
-    R -->|"Future Ownership Uses"| N["New Ownership Unit"]
+    R ==>|"Future Ownership Uses"| N["New Ownership Unit"]
 ```
 
 ### Why Not Persistent Stealth Accounts?
@@ -905,11 +905,11 @@ flowchart TD
 
     A["Disposable Ownership"]
 
-    A --> B["EVM Compatibility"]
-    A --> C["Independent Ownership"]
-    A --> D["One-Time Use"]
-    A --> E["Low Creation Cost"]
-    A --> F["Universal Asset Support"]
+    A ==> B["EVM Compatibility"]
+    A ==> C["Independent Ownership"]
+    A ==> D["One-Time Use"]
+    A ==> E["Low Creation Cost"]
+    A ==> F["Universal Asset Support"]
 ```
 
 ### Evaluating Alternative Representations
@@ -966,23 +966,23 @@ flowchart LR
 
     A["Disposable Ownership Requirements"]
 
-    A --> B["Smart Contracts"]
-    A --> C["Shielded Notes"]
-    A --> D["EOA Shards"]
+    A ==> B["Smart Contracts"]
+    A ==> C["Shielded Notes"]
+    A ==> D["EOA Shards"]
 
-    B --> E["Deployment Cost"]
-    B --> F["Protocol Fingerprint"]
+    B ==> E["Deployment Cost"]
+    B ==> F["Protocol Fingerprint"]
 
-    C --> G["Complex State"]
-    C --> H["Proof Infrastructure"]
+    C ==> G["Complex State"]
+    C ==> H["Proof Infrastructure"]
 
-    D --> I["Zero Deployment"]
-    D --> J["Native Compatibility"]
-    D --> K["Indistinguishable Accounts"]
+    D ==> I["Zero Deployment"]
+    D ==> J["Native Compatibility"]
+    D ==> K["Indistinguishable Accounts"]
 
-    I --> L["Selected Architecture"]
-    J --> L
-    K --> L
+    I ==> L["Selected Architecture"]
+    J ==> L
+    K ==> L
 ```
 
 ### The Shard Lifecycle
@@ -1022,13 +1022,13 @@ At this stage:
 ```mermaid
 stateDiagram-v2
 
-    [*] --> Active
+    [*] ==> Active
 
-    Active --> Pending : Transaction Submitted
+    Active ==> Pending : Transaction Submitted
 
-    Pending --> Spent : Transaction Confirmed
+    Pending ==> Spent : Transaction Confirmed
 
-    Spent --> [*]
+    Spent ==> [*]
 
     note right of Active
         Discoverable
@@ -1050,23 +1050,23 @@ stateDiagram-v2
 flowchart LR
 
     A["Receive Assets"]
-        --> B["Shard A"]
+        ==> B["Shard A"]
 
-    B --> C["Spend"]
+    B ==> C["Spend"]
 
-    C --> D["Shard B"]
-    C --> E["Shard C"]
+    C ==> D["Shard B"]
+    C ==> E["Shard C"]
 
-    D --> F["Future Spend"]
+    D ==> F["Future Spend"]
 
-    F --> G["Shard D"]
-    F --> H["Shard E"]
+    F ==> G["Shard D"]
+    F ==> H["Shard E"]
 
-    E --> I["Future Spend"]
+    E ==> I["Future Spend"]
 
-    I --> J["Shard F"]
+    I ==> J["Shard F"]
 
-    J --> K["Growing Shard Set"]
+    J ==> K["Growing Shard Set"]
 ```
 
 ### Design Outcome
@@ -1141,23 +1141,23 @@ Without management, shard state grows indefinitely.
 flowchart LR
 
     D1["Deposit #1"]
-        --> S1["Shard A"]
+        ==> S1["Shard A"]
 
     D2["Deposit #2"]
-        --> S2["Shard B"]
+        ==> S2["Shard B"]
 
     D3["Deposit #3"]
-        --> S3["Shard C"]
+        ==> S3["Shard C"]
 
     D4["Deposit #4"]
-        --> S4["Shard D"]
+        ==> S4["Shard D"]
 
-    S1 --> W["Wallet State"]
-    S2 --> W
-    S3 --> W
-    S4 --> W
+    S1 ==> W["Wallet State"]
+    S2 ==> W
+    S3 ==> W
+    S4 ==> W
 
-    W --> F["Growing Fragmentation"]
+    W ==> F["Growing Fragmentation"]
 ```
 
 Each deposit increases ownership fragmentation.
@@ -1220,22 +1220,22 @@ flowchart LR
 
     U["User Intent<br/>Send 2.0 ETH"]
 
-    U --> A["Shard A<br/>0.4 ETH"]
-    U --> B["Shard B<br/>0.5 ETH"]
-    U --> C["Shard C<br/>0.3 ETH"]
-    U --> D["Shard D<br/>0.8 ETH"]
+    U ==> A["Shard A<br/>0.4 ETH"]
+    U ==> B["Shard B<br/>0.5 ETH"]
+    U ==> C["Shard C<br/>0.3 ETH"]
+    U ==> D["Shard D<br/>0.8 ETH"]
 
-    A --> S1["Success"]
-    B --> S2["Success"]
+    A ==> S1["Success"]
+    B ==> S2["Success"]
 
-    C --> F["Failure"]
+    C ==> F["Failure"]
 
-    D --> N["Not Executed"]
+    D ==> N["Not Executed"]
 
-    S1 --> X["Inconsistent State"]
-    S2 --> X
-    F --> X
-    N --> X
+    S1 ==> X["Inconsistent State"]
+    S2 ==> X
+    F ==> X
+    N ==> X
 ```
 
 The user requested one transfer.
@@ -1301,18 +1301,18 @@ flowchart LR
     E["Shard E"]
     F["Shard F"]
 
-    A --> T["Mesh Transaction"]
-    B --> T
-    C --> T
-    D --> T
-    E --> T
-    F --> T
+    A ==> T["Mesh Transaction"]
+    B ==> T
+    C ==> T
+    D ==> T
+    E ==> T
+    F ==> T
 
-    T --> G["Change Shard X"]
-    T --> H["Change Shard Y"]
+    T ==> G["Change Shard X"]
+    T ==> H["Change Shard Y"]
 
-    G --> R["Reduced Fragmentation"]
-    H --> R
+    G ==> R["Reduced Fragmentation"]
+    H ==> R
 ```
 
 Compression continuously converts many shards into fewer shards.
@@ -1344,19 +1344,19 @@ flowchart TD
 
     A["Mesh Transaction"]
 
-    A --> B["Execute Command 1"]
-    B --> C["Execute Command 2"]
-    C --> D["Execute Command 3"]
+    A ==> B["Execute Command 1"]
+    B ==> C["Execute Command 2"]
+    C ==> D["Execute Command 3"]
 
-    D --> E{"Any Failure?"}
+    D ==> E{"Any Failure?"}
 
-    E -->|No| F["Commit Entire Transaction"]
+    E ==>|No| F["Commit Entire Transaction"]
 
-    E -->|Yes| G["Revert Entire Transaction"]
+    E ==>|Yes| G["Revert Entire Transaction"]
 
-    F --> H["All Shards Consumed"]
+    F ==> H["All Shards Consumed"]
 
-    G --> I["No Shards Consumed"]
+    G ==> I["No Shards Consumed"]
 ```
 
 ---
@@ -1461,10 +1461,10 @@ flowchart TD
 
     A["One-Time Use Requirement"]
 
-    A --> B["Correctness"]
-    A --> C["Retry Safety"]
-    A --> D["Unambiguous State"]
-    A --> E["Permanent Persistence"]
+    A ==> B["Correctness"]
+    A ==> C["Retry Safety"]
+    A ==> D["Unambiguous State"]
+    A ==> E["Permanent Persistence"]
 ```
 
 ### Approach 1: Check the Shard Nonce
@@ -1496,21 +1496,21 @@ The shard becomes permanently stranded despite never successfully participating 
 flowchart LR
 
     A["Nonce = 0"]
-        --> B["Authorization Processed"]
+        ==> B["Authorization Processed"]
 
-    B --> C["Nonce Incremented"]
+    B ==> C["Nonce Incremented"]
 
-    C --> D["Execution Reverts"]
+    C ==> D["Execution Reverts"]
 
-    D --> E["Assets Still Exist"]
+    D ==> E["Assets Still Exist"]
 
-    D --> F["Nonce = 1"]
+    D ==> F["Nonce = 1"]
 
-    E --> G["Shard Not Spent"]
-    F --> H["Appears Spent"]
+    E ==> G["Shard Not Spent"]
+    F ==> H["Appears Spent"]
 
-    G --> I["Contradiction"]
-    H --> I
+    G ==> I["Contradiction"]
+    H ==> I
 ```
 
 The nonce therefore measures **attempted execution**, not **successful consumption**.
@@ -1556,17 +1556,17 @@ It does **not** prove successful consumption.
 flowchart LR
 
     A["Authorization Processed"]
-        --> B["Delegated Code Installed"]
+        ==> B["Delegated Code Installed"]
 
-    B --> C["Execution Success"]
-    B --> D["Execution Revert"]
+    B ==> C["Execution Success"]
+    B ==> D["Execution Revert"]
 
-    C --> E["Code Remains"]
-    D --> E
+    C ==> E["Code Remains"]
+    D ==> E
 
-    E --> F["State Ambiguous"]
+    E ==> F["State Ambiguous"]
 
-    F --> G["Cannot Determine"]
+    F ==> G["Cannot Determine"]
 ```
 
 Code-based detection therefore fails the unambiguous-state requirement.
@@ -1619,15 +1619,15 @@ flowchart TD
 
     A["Mesh Execution"]
 
-    A --> B{"Execution Successful?"}
+    A ==> B{"Execution Successful?"}
 
-    B -->|No| C["Transaction Reverts"]
+    B ==>|No| C["Transaction Reverts"]
 
-    B -->|Yes| D["Set isShardSpent = true"]
+    B ==>|Yes| D["Set isShardSpent = true"]
 
-    C --> E["Shard Remains Usable"]
+    C ==> E["Shard Remains Usable"]
 
-    D --> F["Shard Permanently Retired"]
+    D ==> F["Shard Permanently Retired"]
 ```
 
 ### Tradeoff Analysis
@@ -1697,11 +1697,11 @@ flowchart LR
     A["Shard A<br/>1.5 ETH"]
     B["Shard B<br/>1.0 ETH"]
 
-    A --> T["Transaction"]
-    B --> T
+    A ==> T["Transaction"]
+    B ==> T
 
-    T --> P["Payment<br/>2.0 ETH"]
-    T --> C["Change<br/>0.5 ETH"]
+    T ==> P["Payment<br/>2.0 ETH"]
+    T ==> C["Change<br/>0.5 ETH"]
 ```
 
 The privacy failure is not ownership.
@@ -1771,16 +1771,16 @@ flowchart LR
     I4["Input Shard<br/>0.7 ETH"]
     I5["Input Shard<br/>0.4 ETH"]
 
-    I1 --> M["Mesh Transaction"]
-    I2 --> M
-    I3 --> M
-    I4 --> M
-    I5 --> M
+    I1 ==> M["Mesh Transaction"]
+    I2 ==> M
+    I3 ==> M
+    I4 ==> M
+    I5 ==> M
 
-    M --> O1["Output<br/>0.9 ETH"]
-    M --> O3["Output<br/>0.8 ETH"]
-    M --> O4["Output<br/>0.7 ETH"]
-    M --> O2["Output<br/>0.5 ETH"]
+    M ==> O1["Output<br/>0.9 ETH"]
+    M ==> O3["Output<br/>0.8 ETH"]
+    M ==> O4["Output<br/>0.7 ETH"]
+    M ==> O2["Output<br/>0.5 ETH"]
 ```
 
 The observer sees four outputs totaling 2.9 ETH.
@@ -1800,15 +1800,15 @@ flowchart TD
 
     A["Observed Outputs<br/>0.8 • 0.7 • 0.9 • 0.5"]
 
-    A --> B["Interpretation 1<br/>Payment = 2.0 ETH"]
-    A --> C["Interpretation 2<br/>Payment = 1.5 ETH"]
-    A --> D["Interpretation 3<br/>Payment = 2.4 ETH"]
-    A --> E["Interpretation 4<br/>Multiple Recipients"]
+    A ==> B["Interpretation 1<br/>Payment = 2.0 ETH"]
+    A ==> C["Interpretation 2<br/>Payment = 1.5 ETH"]
+    A ==> D["Interpretation 3<br/>Payment = 2.4 ETH"]
+    A ==> E["Interpretation 4<br/>Multiple Recipients"]
 
-    B --> X["Observer Cannot Determine Intent"]
-    C --> X
-    D --> X
-    E --> X
+    B ==> X["Observer Cannot Determine Intent"]
+    C ==> X
+    D ==> X
+    E ==> X
 ```
 
 The ambiguity is combinatorial.
@@ -1859,17 +1859,17 @@ flowchart TD
 
     M["Mesh Transaction"]
 
-    M --> O1["Output 1"]
-    M --> O2["Output 2"]
-    M --> O3["Output 3"]
-    M --> O4["Output 4"]
+    M ==> O1["Output 1"]
+    M ==> O2["Output 2"]
+    M ==> O3["Output 3"]
+    M ==> O4["Output 4"]
 
-    O1 --> Q["?"]
-    O2 --> Q
-    O3 --> Q
-    O4 --> Q
+    O1 ==> Q["?"]
+    O2 ==> Q
+    O3 ==> Q
+    O4 ==> Q
 
-    Q --> R["Recipient or Change?"]
+    Q ==> R["Recipient or Change?"]
 ```
 
 This creates a stronger privacy property than amount ambiguity alone.
@@ -1992,13 +1992,13 @@ flowchart TD
 
     A["Amount Ambiguity"]
 
-    A --> B["Randomized Output Splits"]
+    A ==> B["Randomized Output Splits"]
 
-    B --> C["Small Outputs Sometimes Occur"]
+    B ==> C["Small Outputs Sometimes Occur"]
 
-    C --> D["Dust Shards"]
+    C ==> D["Dust Shards"]
 
-    D --> E["Economic Problem"]
+    D ==> E["Economic Problem"]
 ```
 
 ---
@@ -2038,17 +2038,17 @@ flowchart LR
 
     A["ERC-20 Output"]
 
-    A --> B["Token Value"]
+    A ==> B["Token Value"]
 
     C["Future Spend"]
 
-    C --> D["ETH Gas Cost"]
+    C ==> D["ETH Gas Cost"]
 
-    B --> E["Need Exchange Rate"]
+    B ==> E["Need Exchange Rate"]
 
-    D --> E
+    D ==> E
 
-    E --> F["Dust Decision"]
+    E ==> F["Dust Decision"]
 ```
 
 ---
@@ -2116,15 +2116,15 @@ flowchart LR
 
     A["Transfer Cost"]
 
-    A --> B["Paymaster Quote"]
+    A ==> B["Paymaster Quote"]
 
     C["Asset T"]
 
-    C --> B
+    C ==> B
 
-    B --> D["Dust Threshold"]
+    B ==> D["Dust Threshold"]
 
-    D --> E["Output Generation"]
+    D ==> E["Output Generation"]
 ```
 
 ---
@@ -2144,15 +2144,15 @@ flowchart TD
 
     A["Randomized Output Generation"]
 
-    A --> B{"Output Below Threshold?"}
+    A ==> B{"Output Below Threshold?"}
 
-    B -->|Yes| C["Merge Into Other Outputs"]
+    B ==>|Yes| C["Merge Into Other Outputs"]
 
-    B -->|No| D["Create Shard"]
+    B ==>|No| D["Create Shard"]
 
-    C --> E["No Dust Created"]
+    C ==> E["No Dust Created"]
 
-    D --> E
+    D ==> E
 ```
 
 ---
@@ -2240,15 +2240,15 @@ flowchart TD
 
     A["Disposable Shards"]
 
-    A --> B["Hold Assets"]
+    A ==> B["Hold Assets"]
 
-    B --> C["No ETH Balance"]
+    B ==> C["No ETH Balance"]
 
-    C --> D["Cannot Pay Gas"]
+    C ==> D["Cannot Pay Gas"]
 
-    D --> E["Need Sponsored Execution"]
+    D ==> E["Need Sponsored Execution"]
 
-    E --> F["Need Coordination Layer"]
+    E ==> F["Need Coordination Layer"]
 ```
 
 ### The Self-Sovereign Ideal
@@ -2345,18 +2345,18 @@ flowchart LR
 
     U["User Intent<br/>Spend 10 Shards"]
 
-    U --> U1["UserOp 1"]
-    U --> U2["UserOp 2"]
-    U --> U3["UserOp 3"]
-    U --> U4["UserOp 4"]
-    U --> UN["UserOp N"]
+    U ==> U1["UserOp 1"]
+    U ==> U2["UserOp 2"]
+    U ==> U3["UserOp 3"]
+    U ==> U4["UserOp 4"]
+    U ==> UN["UserOp N"]
 
-    U1 --> EP["ERC-4337 EntryPoint"]
-    U2 --> EP
-    U3 --> EP
-    U4 --> EP
-    UN --> EP
-     EP --> P["Partial Execution Risk"]
+    U1 ==> EP["ERC-4337 EntryPoint"]
+    U2 ==> EP
+    U3 ==> EP
+    U4 ==> EP
+    UN ==> EP
+     EP ==> P["Partial Execution Risk"]
 ```
 
 This immediately introduces two problems.
@@ -2386,20 +2386,20 @@ flowchart LR
 
     A["User Intent<br/>Send Payment"]
 
-    A --> B["UserOp 1"]
-    A --> C["UserOp 2"]
-    A --> D["UserOp 3"]
+    A ==> B["UserOp 1"]
+    A ==> C["UserOp 2"]
+    A ==> D["UserOp 3"]
 
-    B --> E["Success"]
-    C --> E
+    B ==> E["Success"]
+    C ==> E
 
-    D --> F["Failure"]
+    D ==> F["Failure"]
 
-    E --> G["Partial Execution"]
+    E ==> G["Partial Execution"]
 
-    F --> G
+    F ==> G
 
-    G --> H["Intent Broken"]
+    G ==> H["Intent Broken"]
 ```
 
 If UserOperation 3 fails:
@@ -2439,18 +2439,18 @@ flowchart LR
     S3["Shard 3"]
     SN["Shard N"]
 
-    S1 --> T["Single Type-4 Transaction"]
-    S2 --> T
-    S3 --> T
-    SN --> T
+    S1 ==> T["Single Type-4 Transaction"]
+    S2 ==> T
+    S3 ==> T
+    SN ==> T
 
-    T --> R["Relayer Broadcast"]
+    T ==> R["Relayer Broadcast"]
 
-    R --> A["Sponsored Gas"]
+    R ==> A["Sponsored Gas"]
 
-    A --> P["GhostRouter"]
+    A ==> P["GhostRouter"]
 
-    P --> B["Atomic Execution"]
+    P ==> B["Atomic Execution"]
 ```
 
 ### The GhostShard Coordination Model
@@ -2539,17 +2539,17 @@ flowchart LR
     R["Relayer"]
     G["GhostRouter"]
 
-    U -->|"Request Quote"| P
+    U ==>|"Request Quote"| P
 
-    P -->|"Signed Sponsorship"| U
+    P ==>|"Signed Sponsorship"| U
 
-    U -->|"Mesh Transaction"| R
+    U ==>|"Mesh Transaction"| R
 
-    R -->|"Broadcast"| G
+    R ==>|"Broadcast"| G
 
-    G -->|"Gas Reimbursement"| R
+    G ==>|"Gas Reimbursement"| R
 
-    G -->|"Deposit Settlement"| P
+    G ==>|"Deposit Settlement"| P
 ```
 
 ---
@@ -2602,13 +2602,13 @@ flowchart TD
     D["Expiry"]
     E["Chain Context"]
 
-    A --> H["paymasterHash"]
-    B --> H
-    C --> H
-    D --> H
-    E --> H
+    A ==> H["paymasterHash"]
+    B ==> H
+    C ==> H
+    D ==> H
+    E ==> H
 
-    H --> S["Paymaster Signature"]
+    H ==> S["Paymaster Signature"]
 ```
 
 ---
@@ -2681,11 +2681,11 @@ flowchart LR
 
     P["Paymaster Deposit"]
 
-    P -->|"Reserve Prefund"| R["Execution Budget"]
+    P ==>|"Reserve Prefund"| R["Execution Budget"]
 
-    R -->|"Execute Mesh"| E["Mesh Execution"]
+    R ==>|"Execute Mesh"| E["Mesh Execution"]
 
-    E -->|"Reconcile"| F["Final Settlement"]
+    E ==>|"Reconcile"| F["Final Settlement"]
 ```
 
 ---
@@ -2740,15 +2740,15 @@ flowchart TD
 
     A["Prefund Reserved"]
 
-    A --> B["Execute Transaction"]
+    A ==> B["Execute Transaction"]
 
-    B --> C["Measure Actual Gas"]
+    B ==> C["Measure Actual Gas"]
 
-    C --> D["Compute Cost"]
+    C ==> D["Compute Cost"]
 
-    D --> E["Refund Surplus To Paymaster"]
+    D ==> E["Refund Surplus To Paymaster"]
 
-    D --> F["Pay Relayer"]
+    D ==> F["Pay Relayer"]
 ```
 
 ---
@@ -2853,11 +2853,11 @@ flowchart LR
 
     B["Paymaster Quote"]
 
-    A --> C["ETH → Token Conversion"]
+    A ==> C["ETH → Token Conversion"]
 
-    B --> C
+    B ==> C
 
-    C --> D["ERC-20 Settlement"]
+    C ==> D["ERC-20 Settlement"]
 ```
 
 ---
@@ -2931,11 +2931,11 @@ flowchart LR
 
     A["ERC-20 Prefund"]
 
-    A --> B["Execution"]
+    A ==> B["Execution"]
 
-    B --> C["Unused Tokens"]
+    B ==> C["Unused Tokens"]
 
-    C --> D["Gas Refund Shard"]
+    C ==> D["Gas Refund Shard"]
 ```
 
 This approach preserves ownership of the excess funds but introduces several drawbacks:
@@ -2960,11 +2960,11 @@ flowchart LR
 
     A["ERC-20 Prefund"]
 
-    A --> B["Execution"]
+    A ==> B["Execution"]
 
-    B --> C["Unused Tokens"]
+    B ==> C["Unused Tokens"]
 
-    C --> D["Previously Spent Shard"]
+    C ==> D["Previously Spent Shard"]
 ```
 
 This approach avoids creating additional ownership structures.
@@ -3081,15 +3081,15 @@ flowchart LR
 
     A["Recipient"]
 
-    A --> B["Meta-Address"]
+    A ==> B["Meta-Address"]
 
     C["Sender"]
 
-    C --> B
+    C ==> B
 
-    B --> D["Fresh Receiving Shard"]
+    B ==> D["Fresh Receiving Shard"]
 
-    D --> E["Ownership Transfer"]
+    D ==> E["Ownership Transfer"]
 ```
 
 A recipient may publish a meta-address through:
@@ -3124,13 +3124,13 @@ flowchart LR
 
     B["Recipient Meta-Address"]
 
-    A --> B
+    A ==> B
 
-    B --> C["Create Receiving Shards"]
+    B ==> C["Create Receiving Shards"]
 
-    C --> D["Mesh Transaction"]
+    C ==> D["Mesh Transaction"]
 
-    D --> E["Recipient Offline or Online"]
+    D ==> E["Recipient Offline or Online"]
 ```
 
 The mechanism used to derive receiving shards is defined by ERC-5564 and discussed in detail in Chapter 4.
@@ -3166,13 +3166,13 @@ flowchart LR
 
     A["Mesh Transaction"]
 
-    A --> B["Create Output Shards"]
+    A ==> B["Create Output Shards"]
 
-    A --> C["Publish ERC-5564 Announcements"]
+    A ==> C["Publish ERC-5564 Announcements"]
 
-    B --> D["Public Blockchain"]
+    B ==> D["Public Blockchain"]
 
-    C --> D
+    C ==> D
 ```
 
 The exact announcement format, encryption scheme, and key derivation process are discussed later in Chapter 4.
@@ -3198,13 +3198,13 @@ flowchart LR
 
     A["Announcements"]
 
-    A --> B["Recipient Scan"]
+    A ==> B["Recipient Scan"]
 
-    B --> C["ERC-5564 Discovery"]
+    B ==> C["ERC-5564 Discovery"]
 
-    C --> D["Owned Shards"]
+    C ==> D["Owned Shards"]
 
-    D --> E["Local Shard Store"]
+    D ==> E["Local Shard Store"]
 ```
 
 The cryptographic mechanisms that make this possible are examined in Chapter 4.
@@ -3230,17 +3230,17 @@ flowchart LR
 
     A["Meta-Address"]
 
-    A --> B["Create Receiving Shard"]
+    A ==> B["Create Receiving Shard"]
 
-    B --> C["Publish Announcement"]
+    B ==> C["Publish Announcement"]
 
-    C --> D["Recipient Discovery"]
+    C ==> D["Recipient Discovery"]
 
-    D --> E["Shard Available"]
+    D ==> E["Shard Available"]
 
-    E --> F["Future Mesh Spend"]
+    E ==> F["Future Mesh Spend"]
 
-    F --> G["Shard Retired"]
+    F ==> G["Shard Retired"]
 ```
 
 The important observation is architectural:
@@ -3318,15 +3318,15 @@ flowchart TD
 
     A["Selective Disclosure"]
 
-    A --> B["Single Transfer"]
+    A ==> B["Single Transfer"]
 
-    A --> C["Bounded Transaction Set"]
+    A ==> C["Bounded Transaction Set"]
 
-    A --> D["Full History"]
+    A ==> D["Full History"]
 
-    B --> E["Vendor Payment"]
-    C --> F["Audit Sample"]
-    D --> G["Regulatory Investigation"]
+    B ==> E["Vendor Payment"]
+    C ==> F["Audit Sample"]
+    D ==> G["Regulatory Investigation"]
 ```
 
 The goal is always to disclose the smallest amount of information necessary.
@@ -3360,16 +3360,16 @@ flowchart LR
 
     A["Wallet History"]
 
-    A --> B["Transfer A"]
-    A --> C["Transfer B"]
-    A --> D["Transfer C"]
-    A --> E["Transfer D"]
+    A ==> B["Transfer A"]
+    A ==> C["Transfer B"]
+    A ==> D["Transfer C"]
+    A ==> E["Transfer D"]
 
-    C --> F["Disclosed"]
+    C ==> F["Disclosed"]
 
-    B --> G["Private"]
-    D --> G
-    E --> G
+    B ==> G["Private"]
+    D ==> G
+    E ==> G
 ```
 
 This represents the preferred disclosure model for most business use cases.
@@ -3419,15 +3419,15 @@ flowchart LR
 
     A["Wallet History"]
 
-    A --> B["Transaction 1"]
-    A --> C["Transaction 2"]
-    A --> D["Transaction 3"]
-    A --> E["Transaction N"]
+    A ==> B["Transaction 1"]
+    A ==> C["Transaction 2"]
+    A ==> D["Transaction 3"]
+    A ==> E["Transaction N"]
 
-    B --> F["Auditor"]
-    C --> F
-    D --> F
-    E --> F
+    B ==> F["Auditor"]
+    C ==> F
+    D ==> F
+    E ==> F
 ```
 
 Because this disclosure scope is broad and difficult to revoke, it should be treated as an exceptional rather than routine action.
@@ -3459,11 +3459,11 @@ flowchart LR
 
     A["Invoice ID / UUID"]
 
-    A --> B["Deterministic Derivation"]
+    A ==> B["Deterministic Derivation"]
 
-    B --> C["Generate Proof"]
+    B ==> C["Generate Proof"]
 
-    C --> D["Auditor Verification"]
+    C ==> D["Auditor Verification"]
 ```
 
 This reduces operational complexity while preserving the ability to generate localized compliance proofs.
@@ -3604,11 +3604,11 @@ Therefore ownership of the NFT becomes unlinkable.
 ```mermaid
 flowchart LR
 
-    A["NFT #123"] --> B["Shard Address"]
+    A["NFT #123"] ==> B["Shard Address"]
 
-    B --> C["Ownership Hidden"]
+    B ==> C["Ownership Hidden"]
 
-    C --> D["Owner Unknown"]
+    C ==> D["Owner Unknown"]
 ```
 
 This is the same mechanism that privatizes:
@@ -3639,11 +3639,11 @@ flowchart LR
 
     A["Recipient Meta-Address"]
 
-    A --> B["ECDH Shared Secret"]
+    A ==> B["ECDH Shared Secret"]
 
-    B --> C["Receiving Shard"]
+    B ==> C["Receiving Shard"]
 
-    C --> D["Transfer NFT"]
+    C ==> D["Transfer NFT"]
 ```
 
 The recipient does not need to be online.
@@ -3680,11 +3680,11 @@ flowchart LR
 
     A["NFT Transfer"]
 
-    A --> B["ERC-5564 Announcement"]
+    A ==> B["ERC-5564 Announcement"]
 
-    B --> C["Recipient Discovery"]
+    B ==> C["Recipient Discovery"]
 
-    C --> D["NFT Shard Recovered"]
+    C ==> D["NFT Shard Recovered"]
 ```
 
 ---
@@ -3710,15 +3710,15 @@ flowchart LR
 
     A["Announcements"]
 
-    A --> B["Trial Decryption"]
+    A ==> B["Trial Decryption"]
 
-    B --> C{"Valid?"}
+    B ==> C{"Valid?"}
 
-    C -->|No| D["Ignore"]
+    C ==>|No| D["Ignore"]
 
-    C -->|Yes| E["Recover NFT Shard"]
+    C ==>|Yes| E["Recover NFT Shard"]
 
-    E --> F["Add To Wallet"]
+    E ==> F["Add To Wallet"]
 ```
 
 ---
@@ -3750,19 +3750,19 @@ flowchart TD
 
     A["Mesh Transaction"]
 
-    A --> B["ERC20 Transfer"]
+    A ==> B["ERC20 Transfer"]
 
-    A --> C["NFT Transfer"]
+    A ==> C["NFT Transfer"]
 
-    A --> D["Announcements"]
+    A ==> D["Announcements"]
 
-    B --> E["Atomic Execution"]
-    C --> E
-    D --> E
+    B ==> E["Atomic Execution"]
+    C ==> E
+    D ==> E
 
-    E --> F["All Succeed"]
+    E ==> F["All Succeed"]
 
-    E --> G["Or All Revert"]
+    E ==> G["Or All Revert"]
 ```
 
 ---
@@ -3800,11 +3800,11 @@ flowchart LR
 
     A["Observer"]
 
-    A --> B["Sees NFT #123"]
+    A ==> B["Sees NFT #123"]
 
-    B --> C["Sees Address A -> Address B"]
+    B ==> C["Sees Address A -> Address B"]
 
-    C --> D["Cannot Link Either Address To User"]
+    C ==> D["Cannot Link Either Address To User"]
 ```
 
 ---
@@ -3901,13 +3901,13 @@ Observers can gradually construct sender profiles based solely on metadata size.
 ```mermaid
 flowchart LR
 
-    A["Institution A"] --> B["128 Byte Metadata"]
+    A["Institution A"] ==> B["128 Byte Metadata"]
 
-    C["Institution B"] --> D["340 Byte Metadata"]
+    C["Institution B"] ==> D["340 Byte Metadata"]
 
-    B --> E["Observable Pattern"]
+    B ==> E["Observable Pattern"]
 
-    D --> E
+    D ==> E
 ```
 
 ---
@@ -3949,12 +3949,12 @@ flowchart LR
 
     D["Invoice Payment"]
 
-    A --> E["Different Metadata Lengths"]
-    B --> E
-    C --> E
-    D --> E
+    A ==> E["Different Metadata Lengths"]
+    B ==> E
+    C ==> E
+    D ==> E
 
-    E --> F["Content Classification"]
+    E ==> F["Content Classification"]
 ```
 
 ---
@@ -3980,13 +3980,13 @@ flowchart TD
 
     A["Identical Outputs"]
 
-    A --> B["Large Anonymity Set"]
+    A ==> B["Large Anonymity Set"]
 
     C["Variable Metadata Length"]
 
-    C --> D["Output Clustering"]
+    C ==> D["Output Clustering"]
 
-    D --> E["Reduced Anonymity Set"]
+    D ==> E["Reduced Anonymity Set"]
 ```
 
 ---
@@ -4022,13 +4022,13 @@ flowchart LR
 
     C["Long Metadata"]
 
-    A --> D["Pad To Fixed Length"]
-    B --> D
-    C --> D
+    A ==> D["Pad To Fixed Length"]
+    B ==> D
+    C ==> D
 
-    D --> E["Encrypt"]
+    D ==> E["Encrypt"]
 
-    E --> F["Uniform Ciphertext Size"]
+    E ==> F["Uniform Ciphertext Size"]
 ```
 
 ---
@@ -4112,29 +4112,29 @@ flowchart TD
 
     A["2.1 EVM Ownership Visibility"]
 
-    A --> B["2.2 Privacy Must Protect Ownership"]
+    A ==> B["2.2 Privacy Must Protect Ownership"]
 
-    B --> C["2.2b Privacy Must Be Default"]
+    B ==> C["2.2b Privacy Must Be Default"]
 
-    C --> D["2.3 Ownership Must Be Disposable"]
+    C ==> D["2.3 Ownership Must Be Disposable"]
 
-    D --> E["2.4 Shards"]
+    D ==> E["2.4 Shards"]
 
-    E --> F["2.5 Fragmentation"]
+    E ==> F["2.5 Fragmentation"]
 
-    F --> G["Compression"]
+    F ==> G["Compression"]
 
-    F --> H["Atomic Execution"]
+    F ==> H["Atomic Execution"]
 
-    H --> I["Shared Execution"]
+    H ==> I["Shared Execution"]
 
-    I --> J["EIP-7702"]
+    I ==> J["EIP-7702"]
 
-    J --> K["Gas Sponsorship"]
+    J ==> K["Gas Sponsorship"]
 
-    K --> L["Relayers"]
+    K ==> L["Relayers"]
 
-    L --> M["GhostShard v0"]
+    L ==> M["GhostShard v0"]
 ```
 
 ---
@@ -4161,18 +4161,18 @@ flowchart LR
 
     A["Address"]
 
-    A --> B["Transaction History"]
+    A ==> B["Transaction History"]
 
-    A --> C["Balance History"]
+    A ==> C["Balance History"]
 
-    A --> D["Relationship Graph"]
+    A ==> D["Relationship Graph"]
 
-    A --> E["Behavioral Patterns"]
+    A ==> E["Behavioral Patterns"]
 
-    B --> F["Ownership Visibility"]
-    C --> F
-    D --> F
-    E --> F
+    B ==> F["Ownership Visibility"]
+    C ==> F
+    D ==> F
+    E ==> F
 ```
 
 ---
@@ -4192,13 +4192,13 @@ flowchart LR
 
     A["Transaction Privacy"]
 
-    A --> B["Transfers Hidden"]
+    A ==> B["Transfers Hidden"]
 
-    B --> C["Ownership Still Visible"]
+    B ==> C["Ownership Still Visible"]
 
-    C --> D["Insufficient"]
+    C ==> D["Insufficient"]
 
-    D --> E["Ownership Privacy"]
+    D ==> E["Ownership Privacy"]
 ```
 
 ---
@@ -4218,17 +4218,17 @@ flowchart LR
 
     A["Opt-In Privacy"]
 
-    A --> B["Small Privacy Set"]
+    A ==> B["Small Privacy Set"]
 
-    B --> C["Users Become Identifiable"]
+    B ==> C["Users Become Identifiable"]
 
-    C --> D["Weak Privacy"]
+    C ==> D["Weak Privacy"]
 
     E["Default Privacy"]
 
-    E --> F["Everyone Uses Same Structure"]
+    E ==> F["Everyone Uses Same Structure"]
 
-    F --> G["Large Anonymity Set"]
+    F ==> G["Large Anonymity Set"]
 ```
 
 ---
@@ -4250,15 +4250,15 @@ flowchart LR
 
     A["Persistent Address"]
 
-    A --> B["More History"]
+    A ==> B["More History"]
 
-    B --> C["More Linkability"]
+    B ==> C["More Linkability"]
 
     D["Disposable Shard"]
 
-    D --> E["Single Lifecycle"]
+    D ==> E["Single Lifecycle"]
 
-    E --> F["Retired Forever"]
+    E ==> F["Retired Forever"]
 ```
 
 ---
@@ -4284,21 +4284,21 @@ flowchart TD
 
     A["Disposable Ownership"]
 
-    A --> B["Independent"]
+    A ==> B["Independent"]
 
-    A --> C["Cheap"]
+    A ==> C["Cheap"]
 
-    A --> D["EVM Compatible"]
+    A ==> D["EVM Compatible"]
 
-    A --> E["Asset Agnostic"]
+    A ==> E["Asset Agnostic"]
 
-    A --> F["Disposable"]
+    A ==> F["Disposable"]
 
-    B --> G["EOA Shards"]
-    C --> G
-    D --> G
-    E --> G
-    F --> G
+    B ==> G["EOA Shards"]
+    C ==> G
+    D ==> G
+    E ==> G
+    F ==> G
 ```
 
 ---
@@ -4318,13 +4318,13 @@ flowchart LR
 
     A["1 Deposit"]
 
-    A --> B["1 Shard"]
+    A ==> B["1 Shard"]
 
     C["100 Deposits"]
 
-    C --> D["100 Shards"]
+    C ==> D["100 Shards"]
 
-    D --> E["Fragmentation"]
+    D ==> E["Fragmentation"]
 ```
 
 ---
@@ -4342,11 +4342,11 @@ flowchart LR
 
     A["Many Small Shards"]
 
-    A --> B["Compression"]
+    A ==> B["Compression"]
 
-    B --> C["Fewer Shards"]
+    B ==> C["Fewer Shards"]
 
-    C --> D["Bounded Growth"]
+    C ==> D["Bounded Growth"]
 ```
 
 ---
@@ -4366,17 +4366,17 @@ flowchart TD
 
     A["User Intent"]
 
-    A --> B["Shard A"]
-    A --> C["Shard B"]
-    A --> D["Shard C"]
+    A ==> B["Shard A"]
+    A ==> C["Shard B"]
+    A ==> D["Shard C"]
 
-    B --> E["Atomic Execution"]
-    C --> E
-    D --> E
+    B ==> E["Atomic Execution"]
+    C ==> E
+    D ==> E
 
-    E --> F["All Succeed"]
+    E ==> F["All Succeed"]
 
-    E --> G["Or All Revert"]
+    E ==> G["Or All Revert"]
 ```
 
 ---
@@ -4396,11 +4396,11 @@ flowchart LR
     B["Shard B"]
     C["Shard C"]
 
-    A --> D["Shared Execution Context"]
-    B --> D
-    C --> D
+    A ==> D["Shared Execution Context"]
+    B ==> D
+    C ==> D
 
-    D --> E["Atomic Mesh Transaction"]
+    D ==> E["Atomic Mesh Transaction"]
 ```
 
 ---
@@ -4420,11 +4420,11 @@ flowchart LR
 
     A["Multiple Shards"]
 
-    A --> B["Multiple Authorizations"]
+    A ==> B["Multiple Authorizations"]
 
-    B --> C["EIP-7702 Authorization List"]
+    B ==> C["EIP-7702 Authorization List"]
 
-    C --> D["Single Atomic Transaction"]
+    C ==> D["Single Atomic Transaction"]
 ```
 
 ---
@@ -4444,11 +4444,11 @@ flowchart LR
 
     A["Shard"]
 
-    A --> B["No ETH"]
+    A ==> B["No ETH"]
 
-    B --> C["Cannot Pay Gas"]
+    B ==> C["Cannot Pay Gas"]
 
-    C --> D["Paymaster Sponsorship"]
+    C ==> D["Paymaster Sponsorship"]
 ```
 
 ---
@@ -4479,9 +4479,9 @@ flowchart LR
 
     A["Signed Mesh Transaction"]
 
-    A --> B["Relayer"]
+    A ==> B["Relayer"]
 
-    B --> C["Ethereum Network"]
+    B ==> C["Ethereum Network"]
 
     D["Can Broadcast"]
 
@@ -4520,11 +4520,11 @@ flowchart TD
 
     A["Selective Disclosure"]
 
-    A --> B["Per-Transaction Proofs"]
+    A ==> B["Per-Transaction Proofs"]
 
-    B --> C["Deterministic Shared Secrets"]
+    B ==> C["Deterministic Shared Secrets"]
 
-    C --> D["Future ZK Compliance Proofs"]
+    C ==> D["Future ZK Compliance Proofs"]
 ```
 
 This branch allows institutions to reveal specific transactions without exposing complete wallet histories.
@@ -4544,9 +4544,9 @@ flowchart TD
 
     A["Metadata Fingerprinting"]
 
-    A --> B["Metadata Standardization"]
+    A ==> B["Metadata Standardization"]
 
-    B --> C["Uniform Encrypted Payloads"]
+    B ==> C["Uniform Encrypted Payloads"]
 ```
 
 #### Dust Protection
@@ -4556,11 +4556,11 @@ flowchart TD
 
     A["Output Randomization"]
 
-    A --> B["Dust Creation"]
+    A ==> B["Dust Creation"]
 
-    B --> C["Dust Protection"]
+    B ==> C["Dust Protection"]
 
-    C --> D["Future Adaptive Thresholds"]
+    C ==> D["Future Adaptive Thresholds"]
 ```
 
 These decisions do not create privacy.
@@ -4580,9 +4580,9 @@ flowchart TD
 
     A["Fungible Assets"]
 
-    A --> B["NFT Ownership"]
+    A ==> B["NFT Ownership"]
 
-    B --> C["Unified Shard Model"]
+    B ==> C["Unified Shard Model"]
 ```
 
 Rather than building separate privacy infrastructure for NFTs, GhostShard extends the same ownership model to all asset classes.
@@ -4598,21 +4598,21 @@ flowchart TD
 
     A["Ownership Visibility"]
 
-    A --> B["Disposable Ownership"]
+    A ==> B["Disposable Ownership"]
 
-    B --> C["Shards"]
+    B ==> C["Shards"]
 
-    C --> D["Compression"]
+    C ==> D["Compression"]
 
-    C --> E["Atomic Execution"]
+    C ==> E["Atomic Execution"]
 
-    D --> F["GhostShard v0"]
+    D ==> F["GhostShard v0"]
 
-    E --> G["EIP-7702"]
+    E ==> G["EIP-7702"]
 
-    G --> H["Gas Sponsorship"]
+    G ==> H["Gas Sponsorship"]
 
-    H --> F
+    H ==> F
 
     I["Compliance Branch"]
 
@@ -4620,9 +4620,9 @@ flowchart TD
 
     K["Asset Coverage"]
 
-    I --> F
-    J --> F
-    K --> F
+    I ==> F
+    J ==> F
+    K ==> F
 ```
 
 ---
@@ -4679,13 +4679,13 @@ The major privacy approaches on Ethereum can be viewed as addressing different l
 ```mermaid
 flowchart LR
 
-    A["Mixers"] --> B["Hide Deposit <-> Withdrawal Link"]
+    A["Mixers"] ==> B["Hide Deposit <-> Withdrawal Link"]
 
-    C["Privacy Pools"] --> D["Hide Internal State Transitions"]
+    C["Privacy Pools"] ==> D["Hide Internal State Transitions"]
 
-    E["Stealth Addresses"] --> F["Hide Recipient Identity"]
+    E["Stealth Addresses"] ==> F["Hide Recipient Identity"]
 
-    G["GhostShard"] --> H["Hide Ownership Relationships"]
+    G["GhostShard"] ==> H["Hide Ownership Relationships"]
 ```
 
 Each approach improves privacy, but they do so at different layers of the system.
@@ -5104,19 +5104,19 @@ flowchart LR
 
     Storage["Storage"]
 
-    User --> SDK
+    User ==> SDK
 
-    SDK --> Paymaster
+    SDK ==> Paymaster
 
-    SDK --> Relayer
+    SDK ==> Relayer
 
-    Relayer --> Router
+    Relayer ==> Router
 
-    Router --> Shard
+    Router ==> Shard
 
-    Router --> Announcer
+    Router ==> Announcer
 
-    SDK --> Storage
+    SDK ==> Storage
 ```
 
 ---
@@ -5161,17 +5161,17 @@ flowchart TD
 
     G["Recipient Discovery"]
 
-    A --> B
+    A ==> B
 
-    B --> C
+    B ==> C
 
-    C --> D
+    C ==> D
 
-    D --> E
+    D ==> E
 
-    E --> F
+    E ==> F
 
-    F --> G
+    F ==> G
 ```
 
 ---
@@ -5203,15 +5203,15 @@ flowchart LR
 
     F["Retired"]
 
-    A --> B
+    A ==> B
 
-    B --> C
+    B ==> C
 
-    C --> D
+    C ==> D
 
-    D --> E
+    D ==> E
 
-    E --> F
+    E ==> F
 ```
 
 The sender's shards transition from active to spent.
@@ -5235,15 +5235,15 @@ A user constructs a transaction, obtains sponsorship approval, and submits the t
 ```mermaid
 flowchart LR
 
-    User -->|"Intent"| SDK
+    User ==>|"Intent"| SDK
 
-    SDK -->|"Signature Request"| Paymaster
+    SDK ==>|"Signature Request"| Paymaster
 
-    Paymaster -->|"Signature"| SDK
+    Paymaster ==>|"Signature"| SDK
 
-    SDK -->|"Submits Signed Transaction"| Relayer
+    SDK ==>|"Submits Signed Transaction"| Relayer
 
-    Relayer -->|"Broadcast Transaction"| Chain
+    Relayer ==>|"Broadcast Transaction"| Chain
 ```
 
 ### Discovery Flow
@@ -5263,11 +5263,11 @@ flowchart LR
 
     Storage["Shard Store"]
 
-    Chain --> Announcements
+    Chain ==> Announcements
 
-    Announcements --> SDK
+    Announcements ==> SDK
 
-    SDK --> Storage
+    SDK ==> Storage
 ```
 
 Together these flows form a complete ownership cycle.
@@ -5289,13 +5289,13 @@ flowchart LR
 
     E["Active Ownership"]
 
-    A --> B
+    A ==> B
 
-    B --> C
+    B ==> C
 
-    C --> D
+    C ==> D
 
-    D --> E
+    D ==> E
 ```
 
 This separation between transaction execution and ownership discovery is a core architectural property of GhostShard and enables permissionless ownership transfer without exposing recipient identities.
@@ -5344,17 +5344,17 @@ flowchart TD
 
     A[EOA Private Key]
 
-    A --> B[EIP-712 Identity Signature]
+    A ==> B[EIP-712 Identity Signature]
 
-    B --> C[Root Seed]
+    B ==> C[Root Seed]
 
-    C --> D[Spending Key]
-    C --> E[Viewing Key]
-    C --> F[Database Encryption Key]
+    C ==> D[Spending Key]
+    C ==> E[Viewing Key]
+    C ==> F[Database Encryption Key]
 
-    D --> G[Stealth Ownership]
-    E --> H[Shard Discovery]
-    F --> I[Shard Storage Protection]
+    D ==> G[Stealth Ownership]
+    E ==> H[Shard Discovery]
+    F ==> I[Shard Storage Protection]
 ```
 
 A single identity signature produces a root seed.
@@ -6005,19 +6005,19 @@ flowchart LR
 
     A[Recipient Meta Address]
 
-    A --> B[Viewing Public Key]
-    A --> C[Spending Public Key]
+    A ==> B[Viewing Public Key]
+    A ==> C[Spending Public Key]
 
     D[Ephemeral Keypair]
 
-    B --> E[ECDH Shared Secret]
-    D --> E
+    B ==> E[ECDH Shared Secret]
+    D ==> E
 
-    E --> F[Stealth Public Key]
+    E ==> F[Stealth Public Key]
 
-    C --> F
+    C ==> F
 
-    F --> G[Shard Address]
+    F ==> G[Shard Address]
 ```
 
 The sender combines:
@@ -6334,19 +6334,19 @@ flowchart LR
 
     A[ERC-5564 Announcement]
 
-    A --> B[Extract Ephemeral Public Key]
+    A ==> B[Extract Ephemeral Public Key]
 
-    B --> C[Compute Shared Secret]
+    B ==> C[Compute Shared Secret]
 
-    C --> D[View Tag Check]
+    C ==> D[View Tag Check]
 
-    D --> E[Derive Shard Address]
+    D ==> E[Derive Shard Address]
 
-    E --> F[Ownership Match]
+    E ==> F[Ownership Match]
 
-    F --> G[Decrypt Metadata]
+    F ==> G[Decrypt Metadata]
 
-    G --> H[Register Shard]
+    G ==> H[Register Shard]
 ```
 
 Every recipient independently performs this process.
@@ -6626,7 +6626,7 @@ flowchart LR
     D[Amount / Token ID]
     E[Encrypted Sender Information]
 
-    A --> B --> C --> D --> E
+    A ==> B ==> C ==> D ==> E
 ```
 
 The plaintext header allows recipients to efficiently identify shard contents after discovery.
@@ -6868,13 +6868,13 @@ A fundamental property of the design is disclosure isolation.
 flowchart LR
 
     A[Announcement A]
-    --> SA[Shared Secret A]
+    ==> SA[Shared Secret A]
 
     B[Announcement B]
-    --> SB[Shared Secret B]
+    ==> SB[Shared Secret B]
 
     C[Announcement C]
-    --> SC[Shared Secret C]
+    ==> SC[Shared Secret C]
 
     SA -. disclosed .-> V[Verifier]
 
@@ -7056,13 +7056,13 @@ flowchart LR
 
     A[Invoice Reference]
 
-    A --> B0[Shard Index 0]
-    A --> B1[Shard Index 1]
-    A --> B2[Shard Index 2]
+    A ==> B0[Shard Index 0]
+    A ==> B1[Shard Index 1]
+    A ==> B2[Shard Index 2]
 
-    B0 --> S0[Stealth Address 0]
-    B1 --> S1[Stealth Address 1]
-    B2 --> S2[Stealth Address 2]
+    B0 ==> S0[Stealth Address 0]
+    B1 ==> S1[Stealth Address 1]
+    B2 ==> S2[Stealth Address 2]
 ```
 
 Each shard index produces a unique deterministic ephemeral key and therefore a unique stealth address.
@@ -7087,11 +7087,11 @@ flowchart LR
 
     I[Invoice Reference]
 
-    I --> D[Deterministic Derivation]
+    I ==> D[Deterministic Derivation]
 
-    D --> A[Announcements]
+    D ==> A[Announcements]
 
-    A --> V[Verification]
+    A ==> V[Verification]
 ```
 
 This eliminates the need to archive per-transaction disclosure material while preserving the ability to verify historical payments.
@@ -7284,15 +7284,15 @@ flowchart LR
     B[Shard B]
     C[Shard C]
 
-    A --> D[7702 Authorization]
-    B --> D
-    C --> D
+    A ==> D[7702 Authorization]
+    B ==> D
+    C ==> D
 
-    D --> E[GhostRouter]
+    D ==> E[GhostRouter]
 
-    E --> F[Atomic Mesh Execution]
+    E ==> F[Atomic Mesh Execution]
 
-    F --> G[Output Shards]
+    F ==> G[Output Shards]
 ```
 
 By delegating execution logic to individual shards only for the duration of a transaction, EIP-7702 enables atomic mesh execution while preserving the protocol's privacy, custody, and ownership guarantees.
@@ -7308,13 +7308,13 @@ The lifecycle begins with local bundle construction inside the SDK, proceeds thr
 flowchart LR
 
     A[Bundle Construction]
-    --> B[Paymaster Quote]
+    ==> B[Paymaster Quote]
 
-    B --> C[Relayer Validation]
+    B ==> C[Relayer Validation]
 
-    C --> D[On-Chain Execution]
+    C ==> D[On-Chain Execution]
 
-    D --> E[Post-Execution Synchronization]
+    D ==> E[Post-Execution Synchronization]
 ```
 
 Each phase has a clearly defined responsibility, security boundary, and failure domain.
@@ -7330,21 +7330,21 @@ flowchart TD
 
     A[Coin Selection]
 
-    A --> B[Shard Key Recovery]
+    A ==> B[Shard Key Recovery]
 
-    B --> C[EIP-7702 Authorizations]
+    B ==> C[EIP-7702 Authorizations]
 
-    C --> D[Stealth Output Generation]
+    C ==> D[Stealth Output Generation]
 
-    D --> E[Metadata Encryption]
+    D ==> E[Metadata Encryption]
 
-    E --> F[Transfer Signatures]
+    E ==> F[Transfer Signatures]
 
-    F --> G[Command Fusion]
+    F ==> G[Command Fusion]
 
-    G --> H[Command Randomization]
+    G ==> H[Command Randomization]
 
-    H --> I[Final Bundle]
+    H ==> I[Final Bundle]
 ```
 
 #### Coin Selection
@@ -7448,7 +7448,7 @@ sequenceDiagram
 
     Paymaster->>Paymaster: Double Simulation
 
-    Paymaster-->>SDK: Signed Quote
+    Paymaster==>>SDK: Signed Quote
 ```
 
 The paymaster:
@@ -7487,7 +7487,7 @@ sequenceDiagram
 
     Relayer->>Relayer: Queue Insertion
 
-    Relayer-->>SDK: Accepted
+    Relayer==>>SDK: Accepted
 ```
 
 Before broadcast, the relayer performs several defensive checks:
@@ -7513,11 +7513,11 @@ Execution proceeds through six stages.
 flowchart LR
 
     A[Authorization Processing]
-    --> B[Pre-Scan]
-    --> C[Prefund Reservation]
-    --> D[Paymaster Validation]
-    --> E[Sandboxed Execution]
-    --> F[Gas Settlement]
+    ==> B[Pre-Scan]
+    ==> C[Prefund Reservation]
+    ==> D[Paymaster Validation]
+    ==> E[Sandboxed Execution]
+    ==> F[Gas Settlement]
 ```
 
 #### Step 0 — Authorization Processing
@@ -7628,15 +7628,15 @@ flowchart TD
 
     A[Transaction Receipt]
 
-    --> B[Parse MeshExecuted]
+    ==> B[Parse MeshExecuted]
 
-    --> C[Delete Consumed Shards]
+    ==> C[Delete Consumed Shards]
 
-    --> D[Add Change Shards]
+    ==> D[Add Change Shards]
 
-    --> E[Advance Sync Cursor]
+    ==> E[Advance Sync Cursor]
 
-    --> F[Future Announcement Discovery]
+    ==> F[Future Announcement Discovery]
 ```
 
 The wallet performs the following updates:
@@ -7699,13 +7699,13 @@ Assets remain held by shards throughout execution. The router's role is limited 
 flowchart LR
 
     A[Input Shards]
-        --> B[GhostRouter]
+        ==> B[GhostRouter]
 
-    B --> C[Announcement Processing]
-    B --> D[Transfer Execution]
-    B --> E[Gas Settlement]
+    B ==> C[Announcement Processing]
+    B ==> D[Transfer Execution]
+    B ==> E[Gas Settlement]
 
-    D --> F[Output Shards]
+    D ==> F[Output Shards]
 ```
 
 #### Responsibilities
@@ -7798,15 +7798,15 @@ flowchart LR
 
     A[Shard Address]
 
-    --> B[EIP-7702 Delegation]
+    ==> B[EIP-7702 Delegation]
 
-    --> C[GhostShard]
+    ==> C[GhostShard]
 
-    C --> D[Native Transfer]
+    C ==> D[Native Transfer]
 
-    C --> E[ERC20 Transfer]
+    C ==> E[ERC20 Transfer]
 
-    C --> F[ERC721 Transfer]
+    C ==> F[ERC721 Transfer]
 ```
 
 The shard itself remains the asset owner. GhostShard merely provides executable logic when temporarily delegated through EIP-7702.
@@ -7909,21 +7909,21 @@ flowchart LR
 
     A[Wallet Shards]
 
-    --> B[Coin Selection]
+    ==> B[Coin Selection]
 
-    --> C[Compression Selection]
+    ==> C[Compression Selection]
 
-    --> D[Allocation Engine]
+    ==> D[Allocation Engine]
 
-    --> E[Output Splitting]
+    ==> E[Output Splitting]
 
-    --> F[Announcement Generation]
+    ==> F[Announcement Generation]
 
-    --> G[Authorization Generation]
+    ==> G[Authorization Generation]
 
-    --> H[Mesh Transaction]
+    ==> H[Mesh Transaction]
 
-    --> I[EIP-7702 Execution]
+    ==> I[EIP-7702 Execution]
 ```
 
 The transaction construction pipeline converts a fragmented shard set into a single executable mesh transaction. Each stage contributes either privacy, efficiency, or fragmentation control before execution occurs on-chain.
@@ -8038,10 +8038,10 @@ flowchart LR
     A[Payment Inputs]
     B[Compression Inputs]
 
-    A --> C[Mesh Transaction]
-    B --> C
+    A ==> C[Mesh Transaction]
+    B ==> C
 
-    C --> D[Consolidated Outputs]
+    C ==> D[Consolidated Outputs]
 ```
 
 Compression therefore occurs naturally during normal wallet activity and requires no dedicated maintenance transaction.
@@ -8127,16 +8127,16 @@ flowchart LR
         O5[Change 3]
     end
 
-    S1 --> M
-    S2 --> M
-    S3 --> M
-    S4 --> M
+    S1 ==> M
+    S2 ==> M
+    S3 ==> M
+    S4 ==> M
 
-    M --> O1
-    M --> O2
-    M --> O3
-    M --> O4
-    M --> O5
+    M ==> O1
+    M ==> O2
+    M ==> O3
+    M ==> O4
+    M ==> O5
 ```
 
 Unlike a traditional transfer, no output is funded by a single identifiable input. Every output may contain value originating from multiple shards, while every shard may contribute value to multiple outputs. The observable transaction therefore forms a many-to-many value graph rather than a one-to-one transfer.
@@ -8152,20 +8152,20 @@ flowchart TD
     B[Shard B]
     C[Shard C]
 
-    A --> M
-    B --> M
-    C --> M
+    A ==> M
+    B ==> M
+    C ==> M
 
     M[Allocation Engine]
 
-    M --> P1[Recipient Output 1]
-    M --> P2[Recipient Output 2]
+    M ==> P1[Recipient Output 1]
+    M ==> P2[Recipient Output 2]
 
-    M --> C1[Change Output 1]
-    M --> C2[Change Output 2]
-    M --> C3[Change Output 3]
+    M ==> C1[Change Output 1]
+    M ==> C2[Change Output 2]
+    M ==> C3[Change Output 3]
 
-    M --> AN[ERC-5564 Announcements]
+    M ==> AN[ERC-5564 Announcements]
 ```
 
 Because both payment and change outputs emerge from the same redistribution process, observers cannot reliably determine which outputs represent payments and which represent wallet-controlled change.
@@ -8221,13 +8221,13 @@ flowchart LR
 
     A[EIP-7702 Delegations]
 
-    --> B[Pre-scan Validation]
+    ==> B[Pre-scan Validation]
 
-    --> C[Announcement Preparation]
+    ==> C[Announcement Preparation]
 
-    --> D[Asset Transfers]
+    ==> D[Asset Transfers]
 
-    --> E[Settlement]
+    ==> E[Settlement]
 ```
 
 Execution proceeds as follows:
@@ -8556,7 +8556,7 @@ sequenceDiagram
 
     Paymaster->>Paymaster: Construct Sponsorship Hash
 
-    Paymaster-->>SDK: Signed Sponsorship Quote
+    Paymaster==>>SDK: Signed Sponsorship Quote
 ```
 
 The process proceeds as follows:
@@ -9130,15 +9130,15 @@ Economically, the relayer occupies an unusual position: it initiates transaction
 flowchart LR
 
     A[User Bundle]
-        --> B[Relayer Validation]
+        ==> B[Relayer Validation]
 
-    B --> C[Transaction Broadcast]
+    B ==> C[Transaction Broadcast]
 
-    C --> D[GhostRouter Settlement]
+    C ==> D[GhostRouter Settlement]
 
-    D --> E[Relayer Reimbursement]
+    D ==> E[Relayer Reimbursement]
 
-    E --> F[Relayer Profit Margin]
+    E ==> F[Relayer Profit Margin]
 ```
 
 ---
@@ -9216,15 +9216,15 @@ flowchart TD
 
     A[Received Bundle]
 
-    --> B[Escrow Check]
+    ==> B[Escrow Check]
 
-    --> C[Simulation]
+    ==> C[Simulation]
 
-    --> D[Gas Validation]
+    ==> D[Gas Validation]
 
-    --> E[Queue Acceptance]
+    ==> E[Queue Acceptance]
 
-    --> F[Broadcast]
+    ==> F[Broadcast]
 ```
 
 Before accepting a bundle, the relayer verifies:
@@ -9356,15 +9356,15 @@ If the condition holds, the relayer reserves the corresponding capacity and reco
 flowchart LR
 
     A[Paymaster Deposit]
-        --> B[Subtract In-Flight Debt]
+        ==> B[Subtract In-Flight Debt]
 
-    B --> C[Available Capacity]
+    B ==> C[Available Capacity]
 
-    C --> D{Worst-Case Cost Covered?}
+    C ==> D{Worst-Case Cost Covered?}
 
-    D -->|Yes| E[Accept Transaction]
+    D ==>|Yes| E[Accept Transaction]
 
-    D -->|No| F[Reject Transaction]
+    D ==>|No| F[Reject Transaction]
 ```
 
 ---
@@ -9479,16 +9479,16 @@ flowchart TD
 
     A[Paymaster]
 
-    A --> B[Gas Deposit]
-    A --> C[Stake]
+    A ==> B[Gas Deposit]
+    A ==> C[Stake]
 
-    B --> D[Execution Funding]
+    B ==> D[Execution Funding]
 
-    C --> E[Trust Signal]
-    C --> F[Slashing Backing]
+    C ==> E[Trust Signal]
+    C ==> F[Slashing Backing]
 
-    E --> G[Relayer Acceptance]
-    F --> G
+    E ==> G[Relayer Acceptance]
+    F ==> G
 ```
 
 This transforms relay participation from a binary trust decision into a market-driven assessment of economic credibility.
@@ -9683,18 +9683,18 @@ flowchart LR
 
     A[Meta Address]
 
-    --> B[Viewing Key]
-    --> C[Spending Key]
+    ==> B[Viewing Key]
+    ==> C[Spending Key]
 
     D[Ephemeral Key]
 
-    B --> E[ECDH Shared Secret]
-    D --> E
+    B ==> E[ECDH Shared Secret]
+    D ==> E
 
-    C --> F[Shard Derivation]
-    E --> F
+    C ==> F[Shard Derivation]
+    E ==> F
 
-    F --> G[One-Time Shard]
+    F ==> G[One-Time Shard]
 ```
 
 ---
@@ -9818,11 +9818,11 @@ flowchart LR
 
     A[User Authorization]
 
-    --> B[Signed Mesh Bundle]
+    ==> B[Signed Mesh Bundle]
 
-    --> C[Relayer Submission]
+    ==> C[Relayer Submission]
 
-    --> D[GhostRouter Execution]
+    ==> D[GhostRouter Execution]
 ```
 
 As a result, transaction execution and transaction authorization become distinct observable events.
@@ -9924,19 +9924,19 @@ flowchart LR
 
     A[Recipient Meta Address]
 
-    --> B[Viewing Key]
-    --> C[Spending Key]
+    ==> B[Viewing Key]
+    ==> C[Spending Key]
 
     D[Ephemeral Public Key]
 
-    B --> E[Shared Secret]
+    B ==> E[Shared Secret]
 
-    D --> E
+    D ==> E
 
-    C --> F[Stealth Address]
-    E --> F
+    C ==> F[Stealth Address]
+    E ==> F
 
-    F --> G[ERC-5564 Announcement]
+    F ==> G[ERC-5564 Announcement]
 ```
 
 ---
@@ -10215,10 +10215,10 @@ No field identifies whether an output represents a payment or change.
 flowchart LR
 
     A[Recipient Output]
-    --> C[ERC-5564 Announcement]
+    ==> C[ERC-5564 Announcement]
 
     B[Change Output]
-    --> C
+    ==> C
 ```
 
 #### Uniform Cryptographic Construction
@@ -10286,13 +10286,13 @@ flowchart LR
 
     A[Ownership State t0]
 
-    --> B[Mesh Transaction]
+    ==> B[Mesh Transaction]
 
-    --> C[Ownership State t1]
+    ==> C[Ownership State t1]
 
-    --> D[Mesh Transaction]
+    ==> D[Mesh Transaction]
 
-    --> E[Ownership State t2]
+    ==> E[Ownership State t2]
 
     A -. Attribution Hypothesis .-> C
     C -. Attribution Hypothesis .-> E
@@ -10366,13 +10366,13 @@ flowchart LR
 
     A[User]
 
-    --> B[Meta Address]
+    ==> B[Meta Address]
 
-    --> C[Stealth Shard]
+    ==> C[Stealth Shard]
 
-    --> D[ERC-721 Ownership]
+    ==> D[ERC-721 Ownership]
 
-    D --> E[NFT]
+    D ==> E[NFT]
 ```
 
 An observer can identify the address currently holding the NFT but cannot determine the identity behind that address.
@@ -10583,15 +10583,15 @@ The protocol therefore avoids the anonymity fragmentation that often occurs when
 flowchart LR
 
     A[User A]
-    --> D[GhostShard Ownership Model]
+    ==> D[GhostShard Ownership Model]
 
     B[User B]
-    --> D
+    ==> D
 
     C[User C]
-    --> D
+    ==> D
 
-    D --> E[Shared Privacy Set]
+    D ==> E[Shared Privacy Set]
 ```
 
 ---
@@ -10989,15 +10989,15 @@ Every announcement derives its own ECDH shared secret using a unique ephemeral k
 flowchart LR
 
     A[Transaction A]
-    --> SA[Shared Secret A]
+    ==> SA[Shared Secret A]
 
     B[Transaction B]
-    --> SB[Shared Secret B]
+    ==> SB[Shared Secret B]
 
     C[Transaction C]
-    --> SC[Shared Secret C]
+    ==> SC[Shared Secret C]
 
-    SA --> V[Verifier]
+    SA ==> V[Verifier]
 
     SB -. Hidden .-> X[Private]
     SC -. Hidden .-> X
@@ -11108,13 +11108,13 @@ The viewing key remains inside the disclosure environment and is never revealed 
 flowchart LR
 
     U[User]
-    --> D[Disclosure Environment]
+    ==> D[Disclosure Environment]
 
-    D --> H[Historical Announcements]
+    D ==> H[Historical Announcements]
 
-    H --> P[Proof Package]
+    H ==> P[Proof Package]
 
-    P --> A[Auditor]
+    P ==> A[Auditor]
 ```
 
 The disclosure environment reconstructs only the requested or full transaction set and produces a proof package for the auditor.
@@ -11159,11 +11159,11 @@ flowchart LR
 
     V[Viewing Key]
 
-    --> H[Historical Activity]
+    ==> H[Historical Activity]
 
-    --> F[Future Activity]
+    ==> F[Future Activity]
 
-    --> O[Ownership Relationships]
+    ==> O[Ownership Relationships]
 ```
 
 This grants visibility into:
@@ -11617,13 +11617,13 @@ The authorization flow is therefore:
 flowchart LR
 
     K[Shard Private Key]
-    --> S[Generate Transfer Authorization]
+    ==> S[Generate Transfer Authorization]
 
-    S --> SIG[Signature]
+    S ==> SIG[Signature]
 
-    SIG --> V[Contract Verification]
+    SIG ==> V[Contract Verification]
 
-    V --> OK[Authorized]
+    V ==> OK[Authorized]
 ```
 
 Only the holder of `shardPrivateKey` can produce a signature that recovers to `cmd.shard`.
@@ -11666,13 +11666,13 @@ The shard can therefore be spent at most once.
 flowchart LR
 
     A[Shard]
-    --> B[Spend]
+    ==> B[Spend]
 
-    B --> C[Marked Spent]
+    B ==> C[Marked Spent]
 
-    C --> D[Reuse Attempt]
+    C ==> D[Reuse Attempt]
 
-    D --> E[Revert]
+    D ==> E[Revert]
 ```
 
 ---
@@ -11735,15 +11735,15 @@ flowchart LR
 
     H[Signed Transfer Hash]
 
-    H --> A[Recipient]
-    H --> B[Amount]
-    H --> C[Asset]
-    H --> D[Announcements]
+    H ==> A[Recipient]
+    H ==> B[Amount]
+    H ==> C[Asset]
+    H ==> D[Announcements]
 
     X[Modify Any Field]
-    --> F[Hash Changes]
+    ==> F[Hash Changes]
 
-    F --> R[Signature Invalid]
+    F ==> R[Signature Invalid]
 ```
 
 The authorization remains cryptographically bound to the exact transfer intended by the signer.
@@ -11828,13 +11828,13 @@ flowchart LR
 
     RK[Root Seed]
 
-    RK --> SK[Shard Keys]
-    RK --> VK[Viewing Keys]
-    RK --> UK[User EOA]
+    RK ==> SK[Shard Keys]
+    RK ==> VK[Viewing Keys]
+    RK ==> UK[User EOA]
 
-    SK --> TC[Transfer Commands]
+    SK ==> TC[Transfer Commands]
 
-    UK --> PB[Paymaster Approval]
+    UK ==> PB[Paymaster Approval]
 ```
 
 Transfer commands are signed by shard keys.
@@ -11904,14 +11904,14 @@ A front-running attack typically follows a simple pattern:
 flowchart LR
 
     U[User Transaction]
-    --> M[Mempool]
+    ==> M[Mempool]
 
     A[Attacker]
-    --> M
+    ==> M
 
-    M --> F[Front-Run Transaction]
+    M ==> F[Front-Run Transaction]
 
-    F --> B[Block Inclusion]
+    F ==> B[Block Inclusion]
 ```
 
 The attacker observes a pending transaction, copies its parameters, modifies the fee, and attempts to execute first.
@@ -11950,15 +11950,15 @@ The authorization flow is:
 flowchart LR
 
     K[Shard Private Key]
-    --> A[EIP-7702 Authorization]
+    ==> A[EIP-7702 Authorization]
 
-    K --> T[EIP-191 Transfer Command]
+    K ==> T[EIP-191 Transfer Command]
 
-    A --> E[Execution]
+    A ==> E[Execution]
 
-    T --> E
+    T ==> E
 
-    E --> S[Shard Spend]
+    E ==> S[Shard Spend]
 ```
 
 Successful execution requires both components.
@@ -12045,14 +12045,14 @@ Any modification changes the committed bundle hash and invalidates sponsorship a
 flowchart LR
 
     O[Original Bundle]
-    --> H[Bundle Hash]
+    ==> H[Bundle Hash]
 
-    H --> P[Paymaster Signature]
+    H ==> P[Paymaster Signature]
 
     M[Modified Bundle]
-    --> H2[Different Hash]
+    ==> H2[Different Hash]
 
-    H2 --> X[Signature Invalid]
+    H2 ==> X[Signature Invalid]
 ```
 
 As a result, a relayer cannot successfully alter transaction contents without causing execution to fail.
@@ -12082,14 +12082,14 @@ The execution model is:
 flowchart LR
 
     A[Command 1]
-    --> B[Command 2]
+    ==> B[Command 2]
 
-    B --> C[Command N]
+    B ==> C[Command N]
 
-    C --> D[Commit]
+    C ==> D[Commit]
 
     X[Failure]
-    --> R[Full Revert]
+    ==> R[Full Revert]
 ```
 
 Either:
@@ -12144,13 +12144,13 @@ It participates in transaction execution by providing gas sponsorship, but it do
 flowchart LR
 
     U[User]
-    --> P[Paymaster]
+    ==> P[Paymaster]
 
-    P --> R[Relayer]
+    P ==> R[Relayer]
 
-    R --> C[GhostShard Router]
+    R ==> C[GhostShard Router]
 
-    C --> A[Assets]
+    C ==> A[Assets]
 
     P -. Sponsors Gas .-> C
 
@@ -12222,9 +12222,9 @@ flowchart LR
     P -. No Access .-> SK[Shard Keys]
     P -. No Access .-> VK[Viewing Keys]
 
-    SK --> T[Transfer Authorization]
+    SK ==> T[Transfer Authorization]
 
-    P --> S[Gas Sponsorship]
+    P ==> S[Gas Sponsorship]
 ```
 
 ---
@@ -12259,14 +12259,14 @@ The approval therefore commits to:
 flowchart LR
 
     B[Transaction Bundle]
-    --> H[Bundle Hash]
+    ==> H[Bundle Hash]
 
-    H --> S[Paymaster Signature]
+    H ==> S[Paymaster Signature]
 
     M[Modified Bundle]
-    --> H2[Different Hash]
+    ==> H2[Different Hash]
 
-    H2 --> X[Signature Invalid]
+    H2 ==> X[Signature Invalid]
 ```
 
 As a result:
@@ -12325,11 +12325,11 @@ GhostShard assumes sponsorship occurs only after simulation.
 flowchart LR
 
     T[Transaction Request]
-    --> S[Simulation]
+    ==> S[Simulation]
 
-    S -->|Pass| A[Sponsorship]
+    S ==>|Pass| A[Sponsorship]
 
-    S -->|Fail| R[Reject]
+    S ==>|Fail| R[Reject]
 ```
 
 Transactions that fail validation or violate policy constraints never receive sponsorship approval.
@@ -12402,16 +12402,16 @@ flowchart LR
 
     U[User]
 
-    U --> P1[Paymaster A]
-    U --> P2[Paymaster B]
+    U ==> P1[Paymaster A]
+    U ==> P2[Paymaster B]
 
-    P1 --> Q1[Quote A]
-    P2 --> Q2[Quote B]
+    P1 ==> Q1[Quote A]
+    P2 ==> Q2[Quote B]
 
-    Q1 --> SDK[GhostShard SDK]
-    Q2 --> SDK
+    Q1 ==> SDK[GhostShard SDK]
+    Q2 ==> SDK
 
-    SDK --> S[Selected Quote]
+    SDK ==> S[Selected Quote]
 
     SDK -. Discard .-> X[Unused Quote]
 ```
@@ -12565,13 +12565,13 @@ Relayers occupy an infrastructure role between users and the blockchain.
 flowchart LR
 
     U[User]
-    --> R[Relayer]
+    ==> R[Relayer]
 
-    R --> N[Network]
+    R ==> N[Network]
 
-    N --> C[GhostShard Router]
+    N ==> C[GhostShard Router]
 
-    C --> A[Assets]
+    C ==> A[Assets]
 
     R -. Broadcast Only .-> C
 
@@ -12665,21 +12665,21 @@ flowchart LR
 
     U[User]
 
-    U --> B[Valid Bundle]
+    U ==> B[Valid Bundle]
 
-    B --> S[Relayer Simulation]
+    B ==> S[Relayer Simulation]
 
-    S --> P[Simulation Pass]
+    S ==> P[Simulation Pass]
 
-    P --> M[Pending Broadcast]
+    P ==> M[Pending Broadcast]
 
-    U --> F[User Front-Runs Bundle]
+    U ==> F[User Front-Runs Bundle]
 
-    F --> C[Shard Consumed]
+    F ==> C[Shard Consumed]
 
-    M --> X[Relayer Transaction]
+    M ==> X[Relayer Transaction]
 
-    X --> R[Revert]
+    X ==> R[Revert]
 ```
 
 The user:
@@ -12771,13 +12771,13 @@ Relayers perform local validation before broadcast.
 flowchart LR
 
     B[Bundle]
-    --> V[Validation]
+    ==> V[Validation]
 
-    V --> S[Simulation]
+    V ==> S[Simulation]
 
-    S -->|Pass| T[Broadcast]
+    S ==>|Pass| T[Broadcast]
 
-    S -->|Fail| R[Reject]
+    S ==>|Fail| R[Reject]
 ```
 
 This protects relayers from:
@@ -12814,12 +12814,12 @@ The bundle is protected by:
 flowchart LR
 
     O[Original Bundle]
-    --> H[Signed Hash]
+    ==> H[Signed Hash]
 
     M[Modified Bundle]
-    --> H2[Different Hash]
+    ==> H2[Different Hash]
 
-    H2 --> X[Verification Failure]
+    H2 ==> X[Verification Failure]
 ```
 
 Any modification changes the committed transaction hash and invalidates the associated approvals.
@@ -12845,13 +12845,13 @@ This does not compromise fund safety but may affect transaction availability.
 flowchart LR
 
     U[User]
-    --> R1[Relayer A]
+    ==> R1[Relayer A]
 
-    R1 -->|Refuses| X[Censored]
+    R1 ==>|Refuses| X[Censored]
 
-    U --> R2[Relayer B]
+    U ==> R2[Relayer B]
 
-    R2 --> N[Network]
+    R2 ==> N[Network]
 ```
 
 GhostShard mitigates censorship through optionality rather than protocol enforcement.
@@ -12932,15 +12932,15 @@ An attacker may repeatedly send very small amounts of ETH or tokens to stealth a
 flowchart LR
 
     A[Attacker]
-    --> D1[Dust Shard]
+    ==> D1[Dust Shard]
 
-    A --> D2[Dust Shard]
+    A ==> D2[Dust Shard]
 
-    A --> D3[Dust Shard]
+    A ==> D3[Dust Shard]
 
-    D1 --> U[Victim Wallet]
-    D2 --> U
-    D3 --> U
+    D1 ==> U[Victim Wallet]
+    D2 ==> U
+    D3 ==> U
 ```
 
 The objective is not theft but state pollution.
@@ -12992,11 +12992,11 @@ Instead, the goal is to increase ownership-discovery workload.
 flowchart LR
 
     A[Attacker]
-    --> N[Large Announcement Set]
+    ==> N[Large Announcement Set]
 
-    N --> M[Victim Meta-Address]
+    N ==> M[Victim Meta-Address]
 
-    M --> W[Wallet Discovery Process]
+    M ==> W[Wallet Discovery Process]
 ```
 
 Potential consequences include:
@@ -13037,11 +13037,11 @@ An attacker may generate large numbers of transactions containing announcements 
 flowchart LR
 
     A[Attacker]
-    --> T[Transactions]
+    ==> T[Transactions]
 
-    T --> E[Announcement Events]
+    T ==> E[Announcement Events]
 
-    E --> N[Network Indexers]
+    E ==> N[Network Indexers]
 ```
 
 Unlike meta-address spam, announcement flooding affects ecosystem infrastructure rather than individual users.
@@ -13087,15 +13087,15 @@ This mapping grows monotonically over time.
 flowchart LR
 
     S1[Spent Shard]
-    --> M[isShardSpent]
+    ==> M[isShardSpent]
 
     S2[Spent Shard]
-    --> M
+    ==> M
 
     S3[Spent Shard]
-    --> M
+    ==> M
 
-    M --> G[Growing State]
+    M ==> G[Growing State]
 ```
 
 Growth characteristics:
@@ -13158,14 +13158,14 @@ Creating dust shards, generating announcements, or flooding discovery infrastruc
 flowchart LR
 
     A[Attacker]
-    --> T[Spam Transaction]
+    ==> T[Spam Transaction]
 
-    T --> G[Gas Cost]
+    T ==> G[Gas Cost]
 
-    T --> N[Network Fees]
+    T ==> N[Network Fees]
 
-    G --> C[Direct Economic Cost]
-    N --> C
+    G ==> C[Direct Economic Cost]
+    N ==> C
 ```
 
 Consequently, attack cost scales approximately linearly with attack volume:
@@ -13226,12 +13226,12 @@ The root seed is generated from a domain-separated EIP-712 signature during wall
 flowchart LR
 
     U[User EOA]
-    --> S[EIP-712 Signature]
+    ==> S[EIP-712 Signature]
 
-    S --> R[Root Seed]
+    S ==> R[Root Seed]
 
-    R --> VK[Viewing Keys]
-    R --> SK[Shard Keys]
+    R ==> VK[Viewing Keys]
+    R ==> SK[Shard Keys]
 ```
 
 The root seed represents the highest-value secret within the GhostShard architecture.
@@ -13282,8 +13282,8 @@ flowchart LR
 
     VK[Viewing Key]
 
-    VK --> D[Transfer Discovery]
-    VK --> M[Metadata Recovery]
+    VK ==> D[Transfer Discovery]
+    VK ==> M[Metadata Recovery]
 
     VK -. No Access .-> S[Spending Authority]
 ```
@@ -13331,9 +13331,9 @@ flowchart LR
 
     Root[Root Seed]
 
-    Root --> S1[Shard Key A]
-    Root --> S2[Shard Key B]
-    Root --> S3[Shard Key C]
+    Root ==> S1[Shard Key A]
+    Root ==> S2[Shard Key B]
+    Root ==> S3[Shard Key C]
 ```
 
 #### Compromise Impact
@@ -13499,11 +13499,11 @@ $$
 flowchart LR
 
     U[External Caller]
-    --> V{Caller = Router?}
+    ==> V{Caller = Router?}
 
-    V -->|No| R[Reject]
+    V ==>|No| R[Reject]
 
-    V -->|Yes| E[Execute Sandbox]
+    V ==>|Yes| E[Execute Sandbox]
 ```
 
 As a result, even if a GhostShard implementation or token contract attempted to reenter the router during execution, nested mesh execution would be blocked by the reentrancy guard.
@@ -13543,13 +13543,13 @@ flowchart LR
 
     S[Shard]
 
-    --> A[Active Implementation]
+    ==> A[Active Implementation]
 
-    A --> C{Matches Authorized Target?}
+    A ==> C{Matches Authorized Target?}
 
-    C -->|Yes| E[Continue]
+    C ==>|Yes| E[Continue]
 
-    C -->|No| R[TargetCodeMismatch]
+    C ==>|No| R[TargetCodeMismatch]
 ```
 
 This validation ensures that each shard's runtime code points to the expected GhostShard implementation.
@@ -13631,13 +13631,13 @@ flowchart LR
 
     B[Mesh Bundle]
 
-    --> C1[Command 1]
-    --> C2[Command 2]
-    --> C3[Command 3]
+    ==> C1[Command 1]
+    ==> C2[Command 2]
+    ==> C3[Command 3]
 
-    C3 --> F[Failure]
+    C3 ==> F[Failure]
 
-    F --> R[Revert Entire Bundle]
+    F ==> R[Revert Entire Bundle]
 ```
 
 Consequently:
@@ -13674,11 +13674,11 @@ flowchart LR
 
     D[Deployment]
 
-    --> I[Immutable Protocol]
+    ==> I[Immutable Protocol]
 
-    I --> N1[No Admin Keys]
-    I --> N2[No Upgrades]
-    I --> N3[No Governance Control]
+    I ==> N1[No Admin Keys]
+    I ==> N2[No Upgrades]
+    I ==> N3[No Governance Control]
 ```
 
 This design eliminates several common attack surfaces:
@@ -13716,13 +13716,13 @@ The protocol introduces no novel cryptographic assumptions. Instead, its securit
 ```mermaid
 flowchart LR
 
-A[secp256k1 ECDH] --> B[Shared Secret]
-B --> C[HKDF-SHA256]
-C --> D[AES-256-GCM Keys]
-B --> E[Stealth Address Derivation]
+A[secp256k1 ECDH] ==> B[Shared Secret]
+B ==> C[HKDF-SHA256]
+C ==> D[AES-256-GCM Keys]
+B ==> E[Stealth Address Derivation]
 
-F[Keccak-256] --> E
-G[ECDSA secp256k1] --> H[Ownership Authorization]
+F[Keccak-256] ==> E
+G[ECDSA secp256k1] ==> H[Ownership Authorization]
 
 ```
 
