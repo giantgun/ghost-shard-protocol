@@ -1,0 +1,25 @@
+{
+  "name": "@ghost-router/services",
+  "version": "0.2.0",
+  "description": "Unified Ghost Services — EIP-7702 paymaster + relayer with Double Simulation gas engine and sequential tx queue",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "viem": "^2.50.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^25.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
