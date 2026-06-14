@@ -28,7 +28,6 @@
     }
   },
   "scripts": {
-    "vercel-build": "npm run build && cd examples/ghost-frontend && next build",
     "build": "tsup src/index.ts src/identity/index.ts src/utils/index.ts src/rpc/index.ts --format esm,cjs --dts --clean --splitting --treeshake --external @noble/curves --external @noble/hashes --external @noble/secp256k1 --external viem --external wagmi --external @tanstack/react-query",
     "clean": "Remove-Item -Recurse -Force dist",
     "test": "vitest"
