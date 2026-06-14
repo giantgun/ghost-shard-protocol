@@ -2,6 +2,7 @@
   "name": "ghost-shard-frontend-nextjs",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "vercel-build": "cd ../../ && npm run build && cd examples/ghost-frontend && next build",
     "dev": "next dev",
