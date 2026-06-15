@@ -1,4 +1,4 @@
-> **v0 — Testnet Only.** Not audited, and subject to change. Refer to the [GhostShard Paper](./ghost-whale-paper/) for the full picture. Do not use with real funds.
+> **v0 — Testnet Only.** Not audited, and subject to change. Refer to the [GhostShard Paper](https://giantgun.github.io/the-ghost-whale-practical-privacy-with-selective-diclosure-on-the-post-pectra-evm/) for the full picture. Do not use with real funds.
 
 # GhostShard Protocol
 
@@ -298,7 +298,7 @@ Both contracts are deployed with deterministic salts — same address on every E
 
 ## Documentation
 
-- **[GhostShard Paper](./ghost-whale-paper/)** — Full protocol specification: design rationale, cryptographic foundations, execution model, privacy analysis, selective disclosure, security analysis, gas evaluation, and formal comparison with existing approaches. [Build the combined paper](ghost-whale-paper/build.sh) from individual section files.
+- **[GhostShard Paper](https://giantgun.github.io/the-ghost-whale-practical-privacy-with-selective-diclosure-on-the-post-pectra-evm/)** — Full protocol specification: design rationale, cryptographic foundations, execution model, privacy analysis, selective disclosure, security analysis, gas evaluation, and formal comparison with existing approaches.
 - [SDK README](./ghost-shard-sdk/README.md) — API reference, integration guides, React/wagmi patterns, IndexedDB storage adapter
 - [Contracts README](./ghost-router-singleton/README.md) — Contract interface, CREATE2 deployment, security properties
 - [SDK Quick Start](./ghost-shard-sdk/QUICKSTART.md) — Getting started guide
@@ -355,7 +355,7 @@ ERC-5564 view tags reduce announcement-scanning cryptographic workload by **~256
 | Total gas | 231,110–2,100,977 |
 | Mean total gas | 1,137,847 |
 
-Complete per-transaction data and on-chain transaction hashes: [Appendix B (Performance Evaluation)](./ghost-whale-paper/11-performance-evaluation)
+Complete per-transaction data and on-chain transaction hashes: [Appendix B (Performance Evaluation)](https://giantgun.github.io/the-ghost-whale-practical-privacy-with-selective-diclosure-on-the-post-pectra-evm/14-appendices/#b1-complete-transaction-data)
 
 ---
 
@@ -375,7 +375,7 @@ Complete per-transaction data and on-chain transaction hashes: [Appendix B (Perf
 - Gas usage
 - Paymaster sponsorship
 
-For formal privacy analysis, anonymity-set modeling, attack surfaces, and economic analysis — see the [paper](./ghost-whale-paper/).
+For formal privacy analysis, anonymity-set modeling, attack surfaces, and economic analysis — see the [paper](https://giantgun.github.io/the-ghost-whale-practical-privacy-with-selective-diclosure-on-the-post-pectra-evm/14-appendices).
 
 ### Compliance
 
